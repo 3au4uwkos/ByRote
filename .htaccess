@@ -1,0 +1,30 @@
+<Directory "/config">
+    Order allow,deny
+    Deny from all
+</Directory>
+
+<Directory "/database">
+    Order allow,deny
+    Deny from all
+</Directory>
+
+<Directory "/scr/controllers">
+    Order allow,deny
+    Deny from all
+</Directory>
+
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+</IfModule>Options -Indexes
